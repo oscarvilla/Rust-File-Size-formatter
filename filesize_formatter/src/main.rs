@@ -1,5 +1,4 @@
 use std::env;
-use std::fmt;
 
 #[derive(Debug)]
 #[derive(PartialEq)]
@@ -10,19 +9,6 @@ enum MySizeUnit {
     Gigabytes,
     Terabytes,
     Error,
-}
-
-impl fmt::Display for MySizeUnit {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", match self {
-            MySizeUnit::Bytes => "B",
-            MySizeUnit::Kilobytes => "KB",
-            MySizeUnit::Megabytes => "MB",
-            MySizeUnit::Gigabytes => "GB",
-            MySizeUnit::Terabytes => "TB",
-            MySizeUnit::Error => "Invalid",
-        })
-    }
 }
 
 #[derive(Debug)]
